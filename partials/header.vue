@@ -15,9 +15,9 @@
       </div>
 
 
-      <div class="flex flex-row relative gap-3  h-full items-center ">
+      <div class="flex flex-row relative gap-3 h-full items-center">
 
-        <div class="flex items-center justify-center h-[50px]  font-14px uppercase text-white"
+        <div class="flex items-center justify-center h-[50px]  font-14px uppercase text-white cursor-pointer"
              :class="{ 'btn-shadow': isButtonOpen, 'search-button': !isButtonOpen }" @click="toggleButton">
 
           <div class="w-full h-full flex items-center justify-center ">
@@ -77,27 +77,34 @@
             <p class="font-14px">Notifications</p>
           </nuxt-link>
 
-          <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
+          <nuxt-link to="/account/profile"
+                     class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
             <p class="font-14px">Details du profil</p>
-          </div>
+          </nuxt-link>
 
-          <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
+          <nuxt-link to="/account/favorite"
+                     class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
             <p class="font-14px">Mes favoris</p>
-          </div>
+          </nuxt-link>
 
-          <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
+          <nuxt-link to="/account/alerts"
+                     class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
             <p class="font-14px">Mes alertes créées</p>
-          </div>
+          </nuxt-link>
 
-          <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
+          <nuxt-link to="/account/activities"
+                     class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
             <p class="font-14px">Mes activités créées</p>
-          </div>
+          </nuxt-link>
 
-          <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
+          <nuxt-link to="/account/reservations"
+                     class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center px-[20px]">
             <p class="font-14px">Mes réservations</p>
-          </div>
+          </nuxt-link>
 
-          <div class=" w-full h-[50px]  hover:bg-[#EDEDED] flex  items-center px-[20px]">
+
+          <div @click="store.setLogoutTrue(true)"
+               class=" w-full h-[50px]  hover:bg-[#EDEDED] flex  items-center px-[20px]">
             <p class="font-14px">Se déconnecter</p>
           </div>
 
@@ -147,32 +154,31 @@
         </div>
 
 
-        <nuxt-link href="/notifications"
-                   class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
+        <nuxt-link href="/notifications" class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
           <p class="font-14px">Notifications</p>
         </nuxt-link>
 
-        <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
+        <nuxt-link to="/account/profile" class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
           <p class="font-14px">Details du profil</p>
-        </div>
+        </nuxt-link>
 
-        <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
+        <nuxt-link to="/account/favorite" class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
           <p class="font-14px">Mes favoris</p>
-        </div>
+        </nuxt-link>
 
-        <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
+        <nuxt-link to="/account/alerts" class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
           <p class="font-14px">Mes alertes créées</p>
-        </div>
+        </nuxt-link>
 
-        <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
+        <nuxt-link to="/account/activities" class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
           <p class="font-14px">Mes activités créées</p>
-        </div>
+        </nuxt-link>
 
-        <div class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
+        <nuxt-link to="/account/reservations" class="border-b w-full h-[50px] hover:bg-[#EDEDED] flex  items-center">
           <p class="font-14px">Mes réservations</p>
-        </div>
+        </nuxt-link>
 
-        <div class=" w-full h-[50px]  hover:bg-[#EDEDED] flex  items-center">
+        <div @click="store.setLogoutTrue(true)" class=" w-full h-[50px]  hover:bg-[#EDEDED] flex  items-center">
           <p class="font-14px">Se déconnecter</p>
         </div>
 
@@ -185,7 +191,16 @@
 
   </div>
 
+
 </template>
+
+<script setup>
+import {usePersistStore} from '~/stores/index.js';
+
+const store = usePersistStore();
+const userLogin = ref(true);
+
+</script>
 
 <script>
 import InputWithIcon from '@/components/inputs/TextInput.vue';
@@ -253,7 +268,7 @@ export default {
     },
   },
   setup() {
-    const Store = usePersistStore();
+    const store = usePersistStore();
     const userLogin = ref(true);
 
     return {

@@ -23,12 +23,13 @@
           <div class="lg:font-semibold mb-3">
             Pour les professionnels
           </div>
-          <div>
+          <nuxt-link to="/devenir-partenaire">
             Devenir partenaire
-          </div>
-          <div>
+          </nuxt-link>
+
+          <nuxt-link to="/activities/partner">
             Mon espace partenaire
-          </div>
+          </nuxt-link>
         </div>
 
 

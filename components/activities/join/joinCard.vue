@@ -1,6 +1,7 @@
 <template>
 
-  <div
+  <nuxt-link
+      to="/activities/a"
       :class="['w-full bg-black bg-opacity-[0.03]', { 'custom-radio': selectedRadio === item.radioValue, 'normal-radio': selectedRadio !== item.radioValue }]"
       @click="selectRadio(item.radioValue)"
   >
@@ -123,7 +124,7 @@
 
     </div>
 
-  </div>
+  </nuxt-link>
 
 
 </template>

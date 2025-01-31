@@ -26,6 +26,7 @@
         </div>
         <div class="font-semibold font-14px ">Détails du profil</div>
       </NuxtLink>
+
     </div>
 
     <div class="flex gap-2 flex-row flex-1 tab mb-4">
@@ -38,6 +39,7 @@
         </div>
         <div class="font-semibold font-14px ">Mes favoris</div>
       </NuxtLink>
+
     </div>
 
     <div class="flex gap-2 flex-row flex-1 tab mb-4">
@@ -50,6 +52,7 @@
         </div>
         <div class="font-semibold font-14px ">Mes alertes créées</div>
       </NuxtLink>
+
     </div>
 
     <div class="flex gap-2 flex-row flex-1 tab mb-4">
@@ -62,6 +65,7 @@
         </div>
         <div class="font-semibold font-14px ">Mes activités créées</div>
       </NuxtLink>
+
     </div>
 
     <div class="flex gap-2 flex-row flex-1 tab mb-4">
@@ -74,71 +78,87 @@
         </div>
         <div class="font-semibold font-14px ">Mes réservations</div>
       </NuxtLink>
+
     </div>
 
-    <div class="flex gap-2 flex-row flex-1 tab mb-4">
+    <div class="flex gap-2 flex-row flex-1 tab mb-4 cursor-pointer">
 
       <div class="flex items-center gap-3 flex-row flex-1"
            :class="{ 'opacity-50': $route.path !== '/account/logout' }"
-           @click="isOpen = true"
+           @click="store?.setLogoutTrue(true) "
       >
 
         <div
             :class="{ 'active-icon text-center text-white': $route.path === '/account/logout', 'not-active-icon': $route.path !== '/account/logout' }"
             class="font-semibold font-14px">
+
           <img src="@/assets/svg/small-logout.svg" alt="Edit Icon"/>
         </div>
+
         <div class="font-semibold font-14px ">Se déconnecter</div>
 
       </div>
 
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
-
-
-  <PopupAlertPopup title="Logout" @close="isOpen = false" :is-open="isOpen">
-
-    <p class="font-18px font-bold text-[red] ">Are u sure u want to logout ?</p>
-
-    <div class="flex flex-row gap-[15px] pt-[20px]">
-      <button @click="isOpen = false" class="border rounded-[10px] w-full apply-padding text-[red] tohover-red" >Logout</button>
-      <button @click="isOpen = false" class="default-btn w-full apply-padding text-white tohover ">Cancel</button>
-    </div>
-
-  </PopupAlertPopup>
 
 
 </template>
 
-<script>
+<script setup>
+import {ref} from 'vue';
 import defaultImage from '@/assets/svg/white-avatar.svg';
 import ImageComponent from '../components/ImageComponent.vue';
+import {usePersistStore} from '~/stores/index.js';
 
-export default {
-  data() {
-    return {
-      imageSrc: defaultImage,
-      isOpen: false
-    };
-  },
-  methods: {
-    triggerFileInput() {
-      this.$refs.fileInput.click();
-    },
-    onFileChange(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          this.imageSrc = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    },
-  },
+const store = usePersistStore();
+
+const imageSrc = ref(defaultImage);
+const isOpen = ref(false);
+
+const triggerFileInput = () => {
+  // Trigger file input click
+  fileInput.value.click();
 };
 
+const onFileChange = (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      imageSrc.value = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+};
+
+const fileInput = ref(null); // Create a reference for the file input element
 </script>
 
 

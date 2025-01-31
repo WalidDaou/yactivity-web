@@ -37,23 +37,52 @@
 
       <div class="w-full lg:w-[76%] bg-white rounded-[20px] lg:px-5 pt-7">
 
-        <div class="tabs font-14px font-semibold overflow-scroll">
-          <div class="flex text-center items-center justify-center min-w-[150px] gap-4 flex-1 active"
-               :class="{ active: currentStep === 1, disabled: currentStep < 1 }" @click="goToStep(1)">
-            <div :class="[currentStep === 1 ? 'active-step' : 'non-active-step']">1</div>
-            Participants
+<!--        <div class="tabs font-14px font-semibold overflow-scroll">-->
+<!--          <div class="flex text-center items-center justify-center min-w-[150px] gap-4 flex-1 active"-->
+<!--               :class="{ active: currentStep === 1, disabled: currentStep < 1 }" @click="goToStep(1)">-->
+<!--            <div :class="[currentStep === 1 ? 'active-step' : 'non-active-step']">1</div>-->
+<!--            Participants-->
+<!--          </div>-->
+<!--          <div class="flex text-center items-center justify-center min-w-[150px] gap-4 flex-1 active"-->
+<!--               :class="{ active: currentStep === 2, disabled: currentStep < 2 }" @click="goToStep(2)">-->
+<!--            <div :class="[currentStep === 2 ? 'active-step' : 'non-active-step']">2</div>-->
+<!--            Formules-->
+<!--          </div>-->
+<!--          <div v-if="showStep4" class="flex text-center items-center justify-center min-w-[150px] gap-4 flex-1 active"-->
+<!--               :class="{ active: currentStep === 3, disabled: currentStep < 3 }" @click="goToStep(3)">-->
+<!--            <div :class="[currentStep === 3 ? 'active-step' : 'non-active-step']">3</div>-->
+<!--            Paiement-->
+<!--          </div>-->
+<!--        </div>-->
+
+
+
+        <div class="tabs font-14px font-semibold overflow-scroll flex">
+
+          <div
+              v-for="(step, index) in ['Participants','Formules' , 'Paiement']"
+              :key="index"
+              ref="stepRefs"
+              class="flex cursor-pointer text-center items-center justify-center min-w-[200px] gap-4 flex-1 active"
+              :class="{ active: currentStep === index + 1, disabled: currentStep < index + 1 }"
+              @click="goToStep(index + 1)"
+          >
+
+            <div v-if="currentStep <= index + 1"
+                 :class="[currentStep === index + 1 ? 'active-step' : 'non-active-step']">
+              {{ index + 1 }}
+            </div>
+            <div v-if="currentStep > index + 1" class="w-[27px] h-full">
+              <img class="w-full" src="public/svgs/step-done.svg" alt="">
+            </div>
+
+            {{ step }}
+
           </div>
-          <div class="flex text-center items-center justify-center min-w-[150px] gap-4 flex-1 active"
-               :class="{ active: currentStep === 2, disabled: currentStep < 2 }" @click="goToStep(2)">
-            <div :class="[currentStep === 2 ? 'active-step' : 'non-active-step']">2</div>
-            Formules
-          </div>
-          <div v-if="showStep4" class="flex text-center items-center justify-center min-w-[150px] gap-4 flex-1 active"
-               :class="{ active: currentStep === 3, disabled: currentStep < 3 }" @click="goToStep(3)">
-            <div :class="[currentStep === 3 ? 'active-step' : 'non-active-step']">3</div>
-            Paiement
-          </div>
+
         </div>
+
+
         <div class="step-content">
 
           <StepParticipants v-if="currentStep === 1" @selectParticipants="setParticipants"/>
@@ -65,7 +94,8 @@
 
         </div>
 
-        <div class="flex flex-col  lg:flex-row w-full pt-6  lg:pl-6 xl:pl-12 gap-4 lg:gap-7 align-baseline pb-5 lg:pb-10">
+        <div
+            class="flex flex-col  lg:flex-row w-full pt-6  lg:pl-6 xl:pl-12 gap-4 lg:gap-7 align-baseline pb-5 lg:pb-10">
 
           <div v-if="currentStep === 5" class="flex w-full lg:w-fit">
             <button type="button" @click="nextStep" :disabled="currentStep === 5"

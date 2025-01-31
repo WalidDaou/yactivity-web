@@ -1,4 +1,6 @@
 <template>
+
+
   <div class="main-container">
     <CreerUneActiviteHeaderVue/>
     <form class="activity-form pt-1">

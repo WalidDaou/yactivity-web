@@ -38,92 +38,6 @@
 
       <div class="w-full lg:w-[76%] bg-white rounded-[20px] lg:px-5 lg:pt-7">
 
-        <!--        <div class="tabs font-14px font-semibold overflow-scroll ">-->
-
-        <!--          <div class="flex text-center items-center justify-center min-w-[150px] gap-4 flex-1 active"-->
-        <!--               :class="{ active: currentStep === 1, disabled: currentStep < 1 }" @click="goToStep(1)">-->
-        <!--            <div :class="[currentStep === 1 ? 'active-step' : 'non-active-step']">1</div>-->
-        <!--            Participants-->
-        <!--          </div>-->
-        <!--          <div class="flex text-center items-center justify-center  min-w-[150px] gap-4 flex-1 active"-->
-        <!--               :class="{ active: currentStep === 2, disabled: currentStep < 2 }" @click="goToStep(2)">-->
-        <!--            <div :class="[currentStep === 2 ? 'active-step' : 'non-active-step']">2</div>-->
-        <!--            Date-->
-        <!--          </div>-->
-        <!--          <div class="flex text-center items-center justify-center  min-w-[150px] gap-4 flex-1 active"-->
-        <!--               :class="{ active: currentStep === 3, disabled: currentStep < 3 }" @click="goToStep(3)">-->
-        <!--            <div :class="[currentStep === 3 ? 'active-step' : 'non-active-step']">3</div>-->
-        <!--            Formules-->
-        <!--          </div>-->
-        <!--          <div v-if="showStep4" class="flex text-center items-center  min-w-[150px] justify-center gap-4 flex-1 active"-->
-        <!--               :class="{ active: currentStep === 4, disabled: currentStep < 4 }" @click="goToStep(4)">-->
-        <!--            <div :class="[currentStep === 4 ? 'active-step' : 'non-active-step']">4</div>-->
-        <!--            Visibilité-->
-        <!--          </div>-->
-        <!--          <div class="flex text-center items-center justify-center  min-w-[150px] gap-4 flex-1 active"-->
-        <!--               :class="{ active: currentStep === 5, disabled: currentStep < 5 }" @click="goToStep(5)">-->
-        <!--            <div v-if="showStep4" :class="[currentStep === 5 ? 'active-step' : 'non-active-step']">5</div>-->
-        <!--            <div :class="[currentStep === 5 ? 'active-step' : 'non-active-step']" v-else>4</div>-->
-        <!--            Paiement-->
-        <!--          </div>-->
-        <!--        </div>-->
-
-        <!--        <div class="tabs font-14px font-semibold overflow-scroll ">-->
-
-        <!--          <div class="flex cursor-pointer text-center items-center justify-center min-w-[200px] gap-4 flex-1 active"-->
-        <!--               :class="{ active: currentStep === 1, disabled: currentStep < 1 }" @click="goToStep(1)">-->
-        <!--            <div v-if="currentStep <= 1" :class="[currentStep === 1 ? 'active-step' : 'non-active-step']">1</div>-->
-        <!--            &lt;!&ndash;            <div v-if="currentStep > 1" :class="[currentStep === 1 ? 'active-step' : 'non-active-step']">&ndash;&gt;-->
-        <!--            <div v-if="currentStep > 1" class="w-[27px] h-full">-->
-        <!--              <img class=" w-full" src="public/svgs/step-done.svg" alt="">-->
-        <!--            </div>-->
-        <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
-        <!--           Participants-->
-        <!--          </div>-->
-
-        <!--          <div class="flex cursor-pointer text-center items-center justify-center  min-w-[200px] gap-4 flex-1 active"-->
-        <!--               :class="{ active: currentStep === 2, disabled: currentStep < 2 }" @click="goToStep(2)">-->
-        <!--            <div v-if="currentStep <= 2" :class="[currentStep === 2 ? 'active-step' : 'non-active-step']">2</div>-->
-        <!--            <div v-if="currentStep > 2" class="w-[27px] h-full">-->
-        <!--              <img class=" w-full" src="public/svgs/step-done.svg" alt="">-->
-        <!--            </div>-->
-        <!--           Date-->
-        <!--          </div>-->
-
-        <!--          <div class="flex cursor-pointer text-center items-center justify-center  min-w-[200px] gap-4 flex-1 active"-->
-        <!--               :class="{ active: currentStep === 3, disabled: currentStep < 3 }" @click="goToStep(3)">-->
-        <!--            <div v-if="currentStep <= 3" :class="[currentStep === 3 ? 'active-step' : 'non-active-step']">3</div>-->
-        <!--            <div v-if="currentStep > 3" class="w-[27px] h-full">-->
-        <!--              <img class=" w-full" src="public/svgs/step-done.svg" alt="">-->
-        <!--            </div>-->
-        <!--           Formules-->
-        <!--          </div>-->
-
-        <!--          <div-->
-        <!--              class="cursor-pointer flex text-center items-center  min-w-[200px] justify-center gap-4 flex-1 active"-->
-        <!--              :class="{ active: currentStep === 4, disabled: currentStep < 4 }" @click="goToStep(4)">-->
-        <!--            <div v-if="currentStep <= 4" :class="[currentStep === 4 ? 'active-step' : 'non-active-step']">4</div>-->
-        <!--            <div v-if="currentStep > 4" class="w-[27px] h-full">-->
-        <!--              <img class=" w-full" src="public/svgs/step-done.svg" alt="">-->
-        <!--            </div>-->
-        <!--           Visibilité-->
-        <!--          </div>-->
-
-        <!--          <div-->
-        <!--              class="cursor-pointer flex text-center items-center  min-w-[200px] justify-center gap-4 flex-1 active"-->
-        <!--              :class="{ active: currentStep === 4, disabled: currentStep < 4 }" @click="goToStep(4)">-->
-        <!--            <div v-if="currentStep <= 4" :class="[currentStep === 4 ? 'active-step' : 'non-active-step']">4</div>-->
-        <!--            <div v-if="currentStep > 4" class="w-[27px] h-full">-->
-        <!--              <img class=" w-full" src="public/svgs/step-done.svg" alt="">-->
-        <!--            </div>-->
-
-        <!--           Paiement-->
-
-        <!--          </div>-->
-
-        <!--        </div>-->
-
-
         <div class="tabs font-14px font-semibold overflow-scroll flex">
 
           <div
@@ -134,6 +48,7 @@
               :class="{ active: currentStep === index + 1, disabled: currentStep < index + 1 }"
               @click="goToStep(index + 1)"
           >
+
             <div v-if="currentStep <= index + 1"
                  :class="[currentStep === index + 1 ? 'active-step' : 'non-active-step']">
               {{ index + 1 }}
@@ -141,8 +56,11 @@
             <div v-if="currentStep > index + 1" class="w-[27px] h-full">
               <img class="w-full" src="public/svgs/step-done.svg" alt="">
             </div>
+
             {{ step }}
+
           </div>
+
         </div>
 
         <div class="step-content">
@@ -195,7 +113,7 @@ import StepFormules from '../../../components/activities/join/StepFormules.vue'
 import StepVisibilite from '../../../components/activities/join/StepVisibilite.vue'
 import StepPaiement from '../../../components/activities/join/StepPaiement.vue'
 
-const currentStep = ref(5)
+const currentStep = ref(1)
 const participants = ref(0)
 const mobileShow = ref(false)
 

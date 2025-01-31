@@ -73,7 +73,9 @@
         <div
             :class="{ 'active-icon text-center text-white ': $route.path === page.path, 'not-active-icon': $route.path !== page.path }"
             class="font-semibold margin-none font-14px">
+
           <img :src="page.icon" alt="Edit Icon"/>
+
         </div>
 
         <span class="font-semibold font-14px">{{ page.title }}</span>
@@ -94,6 +96,10 @@ import smallBell from "@/assets/svg/small-bell.svg";
 import smallCalender from "@/assets/svg/small-calender.svg";
 import smallLogout from "@/assets/svg/small-logout.svg";
 import defaultImage from '@/assets/svg/white-avatar.svg';
+import {usePersistStore} from "~/stores/index.js";
+
+const store = usePersistStore();
+
 
 const router = useRouter();
 const route = useRoute();
@@ -144,9 +150,14 @@ const toggleDropdown = () => {
 };
 
 const navigateToPage = (page) => {
-  currentPage.value = page;
-  isOpen.value = false;
-  router.push(page.path);
+
+  if (page.title !== 'Se déconnecter') {
+    currentPage.value = page;
+    isOpen.value = false;
+    router.push(page.path);
+  } else {
+    store.setLogoutTrue(true)
+  }
 };
 
 function triggerFileInput() {

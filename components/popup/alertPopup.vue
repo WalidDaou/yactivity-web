@@ -6,7 +6,7 @@
             <button @click="closeModal">
               <img src="@/assets/svg/x-alert.svg" alt="Icon" />
             </button>
-            <div class="font-semibold font-25px relative top-[4px] text-center px-1 lg:px-5">{{ title }}</div>
+            <div class="font-semibold font-25px relative top-[4px] text-center px-1 lg:px-5" v-html="title"></div>
             <div></div>
           </div>
           <div class="modal-body">

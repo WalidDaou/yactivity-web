@@ -1,5 +1,7 @@
 <template>
-  <div class="overflow-hidden act-card cursor-pointer">
+
+  <nuxt-link to="/activities/join" class="overflow-hidden act-card cursor-pointer">
+
     <div class="relative overflow-hidden"
          :class="isInitialized ? 'opacity-1 ' : 'h-1 w-1 opacity-0'"
     >
@@ -155,8 +157,8 @@
       </NuxtLink>
     </div>
 
+  </nuxt-link>
 
-  </div>
 </template>
 
 

@@ -11,7 +11,8 @@ export const usePersistStore = defineStore('main', {
         userLogin: false,
         chooseTime: '',
         hour: '14',
-        minute: '55'
+        minute: '55',
+        logoutTrue: false,
     }),
 
     actions: {
@@ -40,6 +41,9 @@ export const usePersistStore = defineStore('main', {
         setHoure(h) {
             this.hour = h
 
+        },
+        setLogoutTrue(bol) {
+            this.logoutTrue = bol
         },
 
     },

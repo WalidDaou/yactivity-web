@@ -531,3 +531,15 @@ $main-color: #e77e22;
   }
 
 }
+
+.width600 {
+  @apply w-full lg:w-[600px]
+}
+
+
+.toChange {
+  &:hover {
+    background: transparent linear-gradient(268deg, #ec6760 0%, #ee8436 100%) 0% 0% no-repeat padding-box;
+    color: white;
+  }
+}

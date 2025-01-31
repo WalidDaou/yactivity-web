@@ -57,7 +57,7 @@
 
   </div>
 
-  <div class="w-full showLgHidden ">
+  <div class="w-full showLgHidden  ">
 
     <CarouselSquare :images="[
                 PartnerCarousel,

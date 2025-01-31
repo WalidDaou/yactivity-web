@@ -9,7 +9,7 @@
       </div>
 
       <div class="showLgHidden z-[100] w-full">
-        <PhoneSidebar />
+        <PhoneSidebar/>
       </div>
 
 
@@ -18,24 +18,37 @@
       </div>
     </div>
 
+    <PopupAlertPopup title="Êtes-vous sure de vouloir se <br> déconnecter?" @close="store?.setLogoutTrue(false)"
+                     :is-open="store?.logoutTrue">
+
+
+      <div class="flex flex-row gap-[15px] pt-[20px] width600 ">
+
+        <button @click="isOpen = false" class="default-btn w-full apply-padding text-white tohover ">
+          Oui
+        </button>
+
+        <button @click="isOpen = false" class="border rounded-[10px] w-full apply-padding font-color border-color toChange" >
+          Non
+        </button>
+
+      </div>
+
+    </PopupAlertPopup>
+
+
   </div>
   <Footer/>
 </template>
 
-<script>
+<script setup>
 
 import Sidebar from '../partials/dashboard-sidebar.vue';
 import Header from '../partials/header.vue';
 import Footer from '../partials/footer.vue';
 import PhoneSidebar from "~/partials/phone-sidebar.vue";
+import {usePersistStore} from "~/stores/index.js";
 
-export default {
-  components: {
-    PhoneSidebar,
-    Header,
-    Footer,
-    Sidebar
-  },
+const store = usePersistStore();
 
-}
 </script>

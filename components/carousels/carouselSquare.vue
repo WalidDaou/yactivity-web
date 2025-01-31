@@ -128,11 +128,6 @@ onUnmounted(() => {
   }
 });
 
-onMounted(() => {
-  if (props.images.length > 0) {
-    initializeCarousel();
-  }
-});
 
 
 </script>

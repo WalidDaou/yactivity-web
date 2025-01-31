@@ -4,6 +4,7 @@
     <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid gap-6">
 
       <RestaurantCard
+
           v-for="(card, index) in cards"
           :key="index"
           :images="card.images"
@@ -21,6 +22,7 @@
           :link="card.link"
           :profile="profile"
       />
+
     </div>
 
     <!-- Carousel for large screens -->
@@ -51,12 +53,15 @@
     </div>
 
     <div class="mt-5 mb-5 flex justify-center gap-5">
+
       <NuxtLink
           to="/activities"
-          class="default-btn py-4 px-12 font-medium text-[13px] tracking-[0.8px] uppercase text-white cursor-pointer hover:text-[#ee8436]"
-      >
+          class="default-btn py-4 px-12 font-medium text-[13px] tracking-[0.8px] uppercase text-white cursor-pointer hover:text-[#ee8436]">
+
         DÉCOUVRIR TOUTES LES ACTIVITÉS
+
       </NuxtLink>
+
     </div>
 
   </div>
