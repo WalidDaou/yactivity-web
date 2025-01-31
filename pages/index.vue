@@ -48,7 +48,7 @@
     </div>
 
     <div id="amitteeCarousel"
-         class="owl-carousel forPr owl-theme flex lg:flex-row flex-col main-container gap-6 main-container pb-10">
+         class="owl-carousel forPr owl-theme flex flex-row  main-container gap-6 main-container pb-10">
 
       <BlogCard class="item" :logoUrl="Playground" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet."

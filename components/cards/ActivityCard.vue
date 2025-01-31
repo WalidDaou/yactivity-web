@@ -1,9 +1,12 @@
 <template>
   <div class="overflow-hidden act-card cursor-pointer">
-    <div class="relative overflow-hidden">
+    <div class="relative overflow-hidden"
+         :class="isInitialized ? 'opacity-1 ' : 'h-1 w-1 opacity-0'"
+    >
 
 
-      <div ref="carousel" id="activity-carousel-1" @click.stop class="w-full  overflow-hidden image-carousel-fancy">
+      <div ref="carousel" id="activity-carousel-1" @click.stop
+           class="w-full !h-fit flex flex-row  overflow-hidden image-carousel-fancy">
 
 
         <div
@@ -158,6 +161,7 @@
 
 
 <script setup>
+
 import {ref, watch, onMounted, onUnmounted} from 'vue';
 
 
@@ -196,25 +200,7 @@ const carousel = ref(null);
 
 let carouselInstance = null;
 
-// const initializeCarousel = () => {
-//   if (carousel.value && props.images.length > 0) {
-//
-//
-//     carouselInstance = new (useNuxtApp().$carousel)(carousel.value, {
-//       infinite: true,
-//       slidesPerPage: 1,
-//       autoplay: {delay: 5000},
-//
-//       dots: true,
-//       on: {
-//         ready: (carousel) => {
-//           console.log('Carousel is ready', carousel);
-//         },
-//       },
-//     });
-//     console.log('FancyApps Carousel initialized:', carouselInstance);
-//   }
-// };
+const isInitialized = ref(false);
 
 
 const initializeCarousel = (Carousel) => {
@@ -232,6 +218,7 @@ const initializeCarousel = (Carousel) => {
           ready: (Carousel) => {
             console.log('Carousel is ready homepage');
             stopInterval.value = true;
+            isInitialized.value = true;
           },
         },
       });
@@ -246,6 +233,7 @@ const initializeCarousel = (Carousel) => {
 const stopInterval = ref(false);
 
 onMounted(() => {
+
   const interval = setInterval(() => {
     if (stopInterval.value) {
       clearInterval(interval);
@@ -264,10 +252,11 @@ onMounted(() => {
     });
   }, 20);
 
-  // Cleanup on unmount
+
   onUnmounted(() => {
     clearInterval(interval);
   });
+
 });
 
 // Example: Set this variable to true when you want to stop the interval

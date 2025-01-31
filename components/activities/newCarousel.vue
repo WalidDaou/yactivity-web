@@ -40,6 +40,7 @@ const initializeCarousel = (Carousel) => {
       on: {
         ready: (carouselTwo) => {
           console.log('Carousel is ready ', carouselTwo);
+          stopInterval.value = true
         },
       },
     });
@@ -88,20 +89,33 @@ const initializeCarousel = (Carousel) => {
 //   }
 // });
 
+const stopInterval = ref(false);
 
 onMounted(() => {
 
-  watchEffect(() => {
-
-    const Carousel = useNuxtApp().$carousel;
-
-    const container = carouselTwo.value;
-
-    if (container && Carousel) {
-      initializeCarousel(Carousel);
+  const interval = setInterval(() => {
+    if (stopInterval.value) {
+      clearInterval(interval);
+      return;
     }
 
+    watchEffect(() => {
+      const container = carouselTwo.value;
+      const Carousel = useNuxtApp().$carousel;
+
+      console.log('initialization');
+
+      if (container && Carousel) {
+        initializeCarousel(Carousel);
+      }
+    });
+  }, 20);
+
+
+  onUnmounted(() => {
+    clearInterval(interval);
   });
+
 });
 
 

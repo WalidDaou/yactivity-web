@@ -497,6 +497,37 @@ $main-color: #e77e22;
 .tohover {
   @apply hover:text-[#e77e22];
 }
+
 .tohover-red {
   @apply hover:text-white hover:bg-red-700
+}
+
+#owl-carousel-2 {
+
+  .owl-dots {
+    span {
+      @apply bg-[#e77e22] #{!important};
+    }
+  }
+
+}
+
+.restaurant-carousel {
+
+  .owl-dots {
+    span {
+      @apply bg-[#e77e22] #{!important};
+    }
+  }
+
+}
+
+#amitteeCarousel {
+
+  .owl-dots {
+    span {
+      @apply bg-[#e77e22] #{!important};
+    }
+  }
+
 }

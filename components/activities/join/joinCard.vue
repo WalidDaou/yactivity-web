@@ -1,4 +1,5 @@
 <template>
+
   <div
       :class="['w-full bg-black bg-opacity-[0.03]', { 'custom-radio': selectedRadio === item.radioValue, 'normal-radio': selectedRadio !== item.radioValue }]"
       @click="selectRadio(item.radioValue)"
@@ -30,6 +31,7 @@
       </div>
 
       <div class="flex flex-row items-center py-[8px] ">
+
         <span class="text-[#EE8436]  font-14px">{{ item.price }}</span>
         <!--      <div class="pl-8">-->
         <!--        <div class="font-semibold font-14px text-white bg-[#E30000] px-1">{{ item.discount }}</div>-->
@@ -43,6 +45,7 @@
 
 
       <div class="flex flex-row gap-4 items-center pt-[10px] h-fit">
+
         <div class="w-[2.6rem] h-[2.6rem] relative bg-[#DBDBDB] rounded-full flex items-center justify-center">
           <ImageComponent
               :url="item.image ?? ''"
@@ -126,6 +129,7 @@
 </template>
 
 <script setup>
+
 import {ref, defineProps} from 'vue';
 
 // Props
