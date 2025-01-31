@@ -231,6 +231,7 @@ const initializeCarousel = (Carousel) => {
         on: {
           ready: (Carousel) => {
             console.log('Carousel is ready homepage');
+            stopInterval.value = true;
           },
         },
       });
@@ -242,9 +243,15 @@ const initializeCarousel = (Carousel) => {
   }
 };
 
-onMounted(() => {
+const stopInterval = ref(false);
 
+onMounted(() => {
   const interval = setInterval(() => {
+    if (stopInterval.value) {
+      clearInterval(interval);
+      return;
+    }
+
     watchEffect(() => {
       const container = carousel.value;
       const Carousel = useNuxtApp().$carousel;
@@ -262,6 +269,9 @@ onMounted(() => {
     clearInterval(interval);
   });
 });
+
+// Example: Set this variable to true when you want to stop the interval
+// stopInterval.value = true;
 
 
 onUnmounted(() => {
