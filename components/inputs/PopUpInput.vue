@@ -1,0 +1,64 @@
+<template>
+
+  <div
+      class="relative bg-white border rounded-[10px] flex flex-row gap-2 w-full h-full pl-[10px]">
+
+    <select
+        ref="select"
+        :placeholder="placeholder"
+        class="input-field font-normal font-14px rounded-[10px]"
+        @change="handleChange"
+        v-model="selectedValue"
+    >
+
+      <option disabled value="">{{ placeholder }}</option>
+      <option v-for="option in options" :key="option.value" :value="option.value">
+        {{ option.label }}
+      </option>
+
+    </select>
+
+    <div class="h-full py-[12px] pr-[10px]">
+      <img :src=icon alt="Icon" class="cursor-pointer"/>
+    </div>
+
+  </div>
+
+</template>
+
+<script setup>
+const props = defineProps({
+  options: {
+    type: Array,
+    required: true,
+    default: () => [],
+  },
+  placeholder: {
+    type: String,
+    default: "Select an option",
+  },
+  icon: String,
+  defaultValue: {
+    type: [String, Number],
+    default: "",
+  },
+});
+
+import {ref, watch} from "vue";
+
+const emit = defineEmits(["sendData"]);
+
+const selectedValue = ref(props.defaultValue); // Initialize with default value
+
+// Watch for changes in selectedValue and emit the updated value
+watch(selectedValue, (newValue) => {
+  emit("sendData", newValue);
+});
+</script>
+
+<style scoped>
+.input-field:focus {
+  border-color: transparent;
+  outline: none;
+}
+</style>

@@ -1,0 +1,84 @@
+$main-color: #e77e22;
+
+
+.v3dp__elements button.selected span {
+  background-color: #e77e22 !important;
+}
+
+.v3dp__elements button:hover {
+  span {
+    background-color: #e77e22 !important;
+  }
+}
+
+.v3dp__popout {
+  box-shadow: none !important;
+  position: static !important;
+  //width: 100% !important;
+}
+
+.v3dp__elements button {
+  @apply px-[2px] #{!important};
+}
+
+.v3dp__popout-day {
+  display: block !important;
+}
+
+.v3dp__divider {
+  height: 0px !important;
+}
+
+.v3dp__subheading {
+  font-weight: 900 !important;
+}
+
+.v3dp__input_wrapper {
+  @apply h-0 #{!important};
+}
+
+.v3dp__popout-time {
+  display: none !important;
+}
+
+
+//.v3dp__datepicker {
+//  @apply grid grid-cols-2 w-full gap-[20px] #{!important};
+//}
+
+.v3dp__input_wrapper {
+  display: none !important;
+}
+
+/* Time picker container */
+.time-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+
+/* Individual time section */
+.time-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-section button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #e77e22;
+}
+
+.time-section span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.time-section button:hover {
+  color: #d35400;
+}

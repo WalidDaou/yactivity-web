@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.007" height="16.175" viewBox="0 0 17.007 16.175">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" y1="0.394" x2="0.109" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ec6760"/>
+      <stop offset="1" stop-color="#ee8436"/>
+    </linearGradient>
+  </defs>
+  <path id="Icon_feather-star" data-name="Icon feather-star" d="M9.892,3l2.13,4.315,4.763.7-3.446,3.357.813,4.742-4.26-2.24-4.26,2.24.813-4.742L3,8.011l4.763-.7Z" transform="translate(-1.389 -1.306)" stroke="rgba(238,132,54,0)" stroke-width="1.5" fill="url(#linear-gradient)"/>
+</svg>

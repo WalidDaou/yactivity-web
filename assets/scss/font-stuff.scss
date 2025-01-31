@@ -1,0 +1,49 @@
+$main-color: #e77e22;
+
+.font-10px {
+  @apply text-[10px]
+}
+
+
+.font-12px {
+  @apply lg:text-[12px]
+}
+
+
+.font-14px {
+  @apply text-[12px] lg:text-[14px]
+}
+
+.font-15px {
+  @apply text-[15px]
+}
+
+.font-18px {
+  @apply text-[16px] lg:text-[18px]
+}
+
+.font-20px {
+  font-size: 20px;
+}
+
+.font-16px {
+  @apply text-[13px] md:text-[14px] lg:text-[16px]
+}
+
+.font-25px {
+  @apply text-[20px] lg:text-[25px]
+
+}
+
+.font-30px {
+  @apply text-[22px] md:text-[25px] lg:text-[30px]
+
+}
+
+.font-70px {
+  font-size: 70px;
+}
+
+.font-color {
+  color: $main-color;
+}
