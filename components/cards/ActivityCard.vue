@@ -242,24 +242,27 @@ const initializeCarousel = (Carousel) => {
   }
 };
 
-
 onMounted(() => {
 
+  const interval = setInterval(() => {
+    watchEffect(() => {
+      const container = carousel.value;
+      const Carousel = useNuxtApp().$carousel;
 
-  watchEffect(() => {
+      console.log('change');
 
-    const container = carousel.value;
-    const Carousel = useNuxtApp().$carousel;
+      if (container && Carousel) {
+        initializeCarousel(Carousel);
+      }
+    });
+  }, 20);
 
-    console.log('change')
-
-    if (container && Carousel) {
-      initializeCarousel(Carousel);
-    }
-
+  // Cleanup on unmount
+  onUnmounted(() => {
+    clearInterval(interval);
   });
-
 });
+
 
 onUnmounted(() => {
 
