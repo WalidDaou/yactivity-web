@@ -1,6 +1,6 @@
 <template>
 
-  <div class="relative">
+  <div class="relative container-center">
 
     <div class="">
 
@@ -28,7 +28,7 @@
 
     </div>
 
-    <div class="absolute top-0 left-0  w-full sm:h-[80%]">
+    <div class="absolute  top-0 left-0   w-full sm:h-[80%]">
 
       <div class="hidden sm:block home-banner">
         <ImageComponent :url="logoUrl" fit="cover" ratio="4-1" :overlay="true" alt="Image Alt Text"/>
