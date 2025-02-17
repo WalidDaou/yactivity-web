@@ -20,7 +20,16 @@
           :reservations="card.reservations"
           :discount="card.discount"
           :link="card.link"
-          :profile="profile"
+          :profile="card.profile"
+          :layout="card.layout"
+          :date="card.date"
+          :time="card.time"
+          :timer="card.timer"
+          :gender="card.gender"
+          :level="card.level"
+          :from="card.from"
+          :to="card.to"
+
       />
 
     </div>
@@ -46,7 +55,15 @@
                           :reservations="card.reservations"
                           :discount="card.discount"
                           :link="card.link"
-                          :profile="profile"
+                          :profile="card.profile"
+                          :layout="card.layout"
+                          :date="card.date"
+                          :time="card.time"
+                          :timer="card.timer"
+                          :gender="card.gender"
+                          :level="card.level"
+                          :from="card.from"
+                          :to="card.to"
           />
         </div>
       </div>
@@ -93,6 +110,15 @@ const cards = [
     reservations: 7,
     discount: 20,
     link: "/",
+    layout: 2,
+    date: 'Jan 10, 2024',
+    time: '13:00',
+    timer: '90 minutes',
+    gender: 'Masculin',
+    level: 'Expert',
+    from: '5',
+    to: '10',
+    profile : profile
   },
   {
     images: [Playground, Playground, Playground],
@@ -108,6 +134,15 @@ const cards = [
     reservations: 7,
     discount: 20,
     link: "/",
+    layout: 1 ,
+    date: 'Jan 10, 2024',
+    time: '13:00',
+    timer: '90 minutes',
+    gender: 'Masculin',
+    level: 'Expert',
+    from: '5',
+    to: '10',
+    profile: ''
   },
   {
     images: [Party, Party, Party],
@@ -123,6 +158,15 @@ const cards = [
     reservations: 7,
     discount: 20,
     link: "/",
+    layout: 1 ,
+    date: 'Jan 10, 2024',
+    time: '13:00',
+    timer: '90 minutes',
+    gender: 'Masculin',
+    level: 'Expert',
+    from: '5',
+    to: '10',
+    profile: ''
   },
   {
     images: [Party, Party, Party],
@@ -138,6 +182,16 @@ const cards = [
     reservations: 7,
     discount: 20,
     link: "/",
+    layout: 2 ,
+    date: 'Jan 10, 2024',
+    time: '13:00',
+    timer: '90 minutes',
+    gender: 'Masculin',
+    level: 'Expert',
+    from: '5',
+    to: '10',
+    profile: profile
+
   },
   {
     images: [Party, Party, Party],
@@ -153,7 +207,18 @@ const cards = [
     reservations: 7,
     discount: 20,
     link: "/",
+    layout: 2 ,
+    date: 'Jan 10, 2024',
+    time: '13:00',
+    timer: '90 minutes',
+    gender: 'Masculin',
+    level: 'Expert',
+    from: '5',
+    to: '10',
+    profile: profile
+
   },
+
 ];
 
 // Owl Carousel reference

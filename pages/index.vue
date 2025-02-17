@@ -20,12 +20,14 @@
 
       <div
           class="main-container grid grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(100px,1fr))]   justify-between pb-5 lg:gap-5 gap-5">
+          
         <CategoryCard title="Gastronomie" :icon="food" :backgroundImage="foodBg"/>
         <CategoryCard title="Sports" :icon="sport" :backgroundImage="foodBg"/>
         <CategoryCard title="Sorties festives" :icon="music" :backgroundImage="foodBg"/>
         <CategoryCard title="Art & Culture" :icon="art" :backgroundImage="foodBg"/>
         <CategoryCard title="Jeux Divers" :icon="diver" :backgroundImage="foodBg"/>
         <CategoryCard title="Bien-être" :icon="flower" :backgroundImage="foodBg"/>
+        
       </div>
 
     </div>

@@ -49,10 +49,10 @@
       </div>
 
       <div class="absolute top-4 right-4 flex space-x-2 z-50">
-        <button class="bg-white p-2 rounded-full shadow-md">
+        <button class="bg-white hover:bg-[#BABABA] p-2 rounded-full shadow-md">
           <img src="@/assets/svg/small-bell-black.svg" alt="Edit Icon"/>
         </button>
-        <button class="bg-white p-2 heart-pt rounded-full shadow-md">
+        <button class="bg-white hover:bg-[#BABABA]  p-2 heart-pt rounded-full shadow-md">
           <img src="@/assets/svg/small-heart-black.svg" alt="Edit Icon"/>
         </button>
       </div>
@@ -93,8 +93,12 @@
 
 
         <div v-if="layout === 1"
-             class="flex flex-col lg:flex-wrap md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-5 mt-2">
-          <div class="flex items-center">
+             class="flex flex-col lg:flex-wrap xl:flex-row md:grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-5 mt-2">
+
+
+          <div class="flex items-center w-fit">
+
+
             <div class="font-semibold font-14px non-active-icon text-center text-white">
               <img src="@/assets/svg/small-people.svg" alt="Edit Icon"/>
             </div>
@@ -107,9 +111,11 @@
                 </span>
               </div>
             </div>
+
+
           </div>
 
-          <div class="flex flex-row h-fit gap-5">
+          <div class="flex flex-row w-fit h-fit gap-4">
             <div class="category-boxx font-normal text-[12px] bg-[#DEF1F4] text-black">
               <span>{{ interested }} intéressés</span>
             </div>

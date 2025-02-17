@@ -15,8 +15,11 @@
              type="text" class="cursor-pointer absolute w-full h-full top-0 left-0 opacity-0">
     </div>
 
-    <div class="absolute top-0 right-0 h-[60%] mt-[8px] w-[1px] bg-[black] opacity-[0.15]">
+
+    <div v-if="showBorder" class="absolute top-0 right-0 h-[60%] mt-[8px] w-[1px] bg-[black] opacity-[0.15]">
     </div>
+
+
   </div>
 </template>
 
@@ -29,7 +32,11 @@ const store = useStore()
 const props = defineProps({
   filter: Number,
   placeholder: String,
-  icon: String
+  icon: String,
+  showBorder : {
+    type : Boolean,
+    default : true
+  }
 });
 
 // const emit = defineEmits(['updateFilter']);

@@ -4,7 +4,8 @@
 
     <div class="">
 
-      <div class="main-container z-[2] w-full absolute pt-[30px] text-center text-white font-semibold lg:text-[40px] text-[20px]">
+      <div
+          class="main-container z-[2] w-full absolute pt-[30px] text-center text-white font-semibold lg:text-[40px] text-[20px]">
         Envie de sortir ou de faire une activité ?<br/>Seul, en groupe ou avec notre communauté ?
       </div>
 
@@ -15,13 +16,15 @@
       <div class="mt-[180px] mb-[300px] main-container forPr">
 
         <div id="owl-carousel-2" class="owl-carousel flex flex-row walid-carousel-1 owl-theme " ref="owlCarouselTwo">
-          <div class="item" v-for="(card, index) in cards" :key="index">
+
+          <div class="item h-[340px]" v-for="(card, index) in cards" :key="index">
             <CardComponent
                 :title="card.title"
                 :description="card.description"
                 :icon="card.icon"
             />
           </div>
+
         </div>
 
       </div>
@@ -36,13 +39,14 @@
 
       <!-- Banner for small screens -->
       <div class="to-hide-mini ">
-        <ImageComponent :overlaySecond="true" :url="logoUrl" fit="cover" ratio="2-1" :overlay="false" alt="Image Alt Text"/>
+        <ImageComponent :overlaySecond="true" :url="logoUrl" fit="cover" ratio="2-1" :overlay="false"
+                        alt="Image Alt Text"/>
       </div>
 
       <div class="show-mini">
-        <ImageComponent :overlaySecond="true" :url="logoUrl" fit="cover" ratio="1-1" :overlay="false" alt="Image Alt Text"/>
+        <ImageComponent :overlaySecond="true" :url="logoUrl" fit="cover" ratio="1-1" :overlay="false"
+                        alt="Image Alt Text"/>
       </div>
-
 
 
     </div>

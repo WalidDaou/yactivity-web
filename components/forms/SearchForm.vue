@@ -11,8 +11,8 @@
 
             :filter="1"
 
-            placeholder="Rechercher des activités" :icon="searchIcon"
-            class="right-in pl-4"/>
+            placeholder="Activités" :icon="searchIcon"/>
+
 
 
         <!--        <div v-if="firstFilter" class="bg-[black] w-[400px]">-->
@@ -22,10 +22,12 @@
         <!--        <hr class="vertical-line pr-5">-->
 
         <div class="relative w-full h-full">
+
           <InputWithIcon
               :filter="2"
               placeholder="Autour de moi"
-              :icon="addressIcon"/>
+              :icon="addressIcon"
+              />
 
           <div v-if="store?.filterNumber === 2"
                @click.stop="store?.setFilterNumber(2)"
@@ -79,7 +81,10 @@
         </div>
 
         <DateWithIcon :filter="4"
+                      :show-border="false"
                       placeholder="Participants" :icon="peopleIcon"/>
+
+
 
 
       </div>

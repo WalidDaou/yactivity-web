@@ -547,3 +547,44 @@ $main-color: #e77e22;
     color: white;
   }
 }
+
+.category-card {
+
+  .to-display {
+
+    background: transparent linear-gradient(268deg, rgba(236, 103, 96, 0.5) 0%, rgba(238, 132, 54, 0.5) 100%) 0% 0% no-repeat padding-box;
+    transition: opacity 0.3s ease;
+    @apply opacity-[0];
+
+  }
+
+  &:hover {
+
+    .to-display {
+
+      transition: opacity 0.3s ease;
+      @apply opacity-[1];
+
+    }
+
+  }
+}
+
+
+@font-face {
+  font-family: 'kanit-medium';
+  src: url('assets/fonts-kanit/Kanit-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'kanit-regular';
+  src: url('assets/fonts-kanit/Kanit-Regular.ttf') format('truetype');
+}
+
+.kanit-medium {
+  font-family: 'kanit-medium', serif;
+}
+
+.kanit-regular {
+  font-family: 'kanit-regular', serif;
+}
